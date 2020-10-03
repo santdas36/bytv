@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width= device-width, initial-scale=1.0" />
+	<meta charset="UTF-8" />
+	<title>Pubg by bytv</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<style type="text/css">
+	body{
+		width:1352px;
+		height:568px;
+		background-color: black;
+		font-family: segoe ui;
+		color: white;
+	}
+	#head{
+		width: 1352px;
+		height: auto;
+		color: white;
+		font-family: Arial black;	
+		font-weight: bolder;
+		font-size: 30px;
+        background-color: black;
+        text-align: center;
+    	position: all;
+        border:1px solid white;
+	}
+	section{
+		float:left;
+		width: 200px;
+		border-right:1px solid white; 
+	}
+	.sec1{
+		height: 568px;
+	}
+	.sec2{
+		height: 568px;
+		margin-left: 1px;
+	}
+	#mapforsolo{
+		display: none;
+	}
+	#mapforduo{
+		display: none;
+	}
+	#mapforsquad{
+		display: none;
+	}
+	#solo{
+		width: 100%;
+		height: 189.9px;
+		color: white;
+		text-align: center;
+		font-family: Calibri;
+		font-size: 20px;
+		background-color: black;
+		border:0px solid white;
+		border-bottom: 1px solid white;
+	}
+	#duo{
+		width: 100%;
+		height: 189.9px;
+		color: white;
+		text-align: center;
+		font-family: Calibri;
+		font-size: 20px;
+		background-color: black;
+		border:0px solid white;
+		border-bottom: 1px solid white;
+	}
+	#squad{
+		width: 100%;
+		height: 189.9px;
+		color: white;
+		text-align: center;
+		font-family: Calibri;
+		font-size: 20px;
+		background-color: black;
+		border:0px solid white;
+		border-bottom: 1px solid white;
+	}
+	.button{
+		width: 100%;
+		height: 113.6px;
+		color: white;
+		text-align: center;
+		font-family: Calibri;
+		font-size: 24px;
+		background-color: black;
+		border:0px solid white;
+		border-bottom: 1px solid white;
+	}
+	#livik{
+		color: white;
+		background-color: black;
+	}
+	#erangle{
+		color: white;
+		background-color: black;
+	}
+	#miramar{
+		color: white;
+		background-color: black;
+	}
+	#sanhok{
+		color: white;
+		background-color: black;
+	}
+	#vikendi{
+		color: white;
+		background-color: black;
+	}
+	#form{
+		align-content: center;
+		width: 400px;
+		height: 468px;
+		margin-left:10px;
+		margin-top: 51px;
+		border:2px solid white;
+		display: none;
+	}
+	form{
+		font-size: 18px;
+		text-align: center;
+	}
+	input{
+		width: 300px;
+		height: 30px;
+		font-size: 14px;
+		text-align: center;
+	}
+	#submit{
+		width: 150px;
+		height: 60px;
+		font-size: 15px;
+	}
+	#menubar{
+		float: right;
+		height: 568px;
+		border-left: 1px solid white;
+	}
+	#instructionbutton{
+		width: 100%;
+		height: 189.9px;
+		color: white;
+		text-align: center;
+		font-family: Calibri;
+		font-size: 20px;
+		background-color: black;
+		border:0px solid white;
+		border-bottom: 1px solid white;
+	}
+	#eventbutton{
+		width: 100%;
+		height: 189.9px;
+		color: white;
+		text-align: center;
+		font-family: Calibri;
+		font-size: 20px;
+		background-color: black;
+		border:0px solid white;
+		border-bottom: 1px solid white;
+	}
+	#winnersanddonationsbutton{
+		width: 100%;
+		height: 189.9px;
+		color: white;
+		text-align: center;
+		font-family: Calibri;
+		font-size: 20px;
+		background-color: black;
+		border:0px solid white;
+		border-bottom: 1px solid white;
+	}
+	#instruction{
+		background-color: white;
+		width: 300px;
+		max-height: 566px;
+		border:double white;
+		float: right;
+		font-size: 11px;
+		margin-right: 4px;
+		color: black;
+		display: none;
+	}
+	#event{
+		width: 210px;
+		border:0px solid;
+		border-left: 1px solid white;
+		height: 569px;
+		float: right;
+		display: none;
+		background-color: white;
+		color: black;
+	}
+	.boxes{
+		height: 187px;
+		width: 208px;
+		background-color: black;
+		border: 1px solid black;
+		color: white;
+		font-size: 16px;
+	}
+	#b1{
+		background-color: white;
+		color: black;
+	}
+	#b3{
+		background-color: white;
+		color: black;
+	}
+	#winnersanddonations{
+		background-color: white;
+		width: 300px;
+		max-height: 560px;
+		border:double white;
+		float: right;
+		font-size: 15px;
+		color: black;
+		display: none;
+		font-family: Calibri;
+	}
+	#winners{
+		width: 300px;
+		height: 278px;
+		border: 1px solid black;
+	}
+	#donations{
+		width: 300px;
+		height: 278px;
+		border: 1px solid black;
+		color: white;
+		background-color: black;
+
+	}
+	a{
+		color: blue;
+	}
+	#donatenow{
+		width: 120px;
+		height: 30px;
+		font-size: 10px;
+		background-color: rgb(0, 125, 0);
+		color: white;
+		margin-left: 85px;
+		font-family: segoe ui;
+		border: 1px solid black; 
+	}
+	</style>
+</head>
+<body>
+	<div id=head><b>BYTV TORNAMENTS<b></div>
+	<br>
+	<section class="sec1" id=member>
+		<button id="solo" type="button" onclick="myfun(1)">SOLO</button>
+		<button id="duo" type="button">DUO<br><span style="font-size: 12px; color: white;">(Locked)</span></button>
+		<button id="squad" type="button">SQUAD<br><span style="font-size: 12px; color: white;">(Locked)</span></button>
+	</section>
+	<section class="sec2" id=mapforsolo>
+		<button class="button" id="livik" type="button">LIVIK<br><span style="font-size: 12px; color: white;">(Locked)</span></button>
+		<button class="button" id="erangle" type="button" onclick="myfun2(2,1)">ERANGLE</button>
+		<button class="button" id="miramar" type="button">MIRAMAR<br><span style="font-size: 12px; color: white;">(Locked)</span></button>
+		<button class="button" id="sanhok" type="button">SANHOK<br><span style="font-size: 12px; color: white;">(Locked)</span></button>
+		<button class="button" id="vikendi" type="button">VIKENDI<br><span style="font-size: 12px; color: white;">(Locked)</span></button>
+	</section>
+	<section class="sec2" id=mapforduo>
+		<button class="button" id="livik2" type="button" onclick="myfun4(1,2)">LIVIK</button>
+		<button class="button" id="erangle2" type="button" onclick="myfun4(2,2)">ERANGLE</button>
+		<button class="button" id="miramar2" type="button" onclick="myfun4(3,2)">MIRAMAR</button>
+		<button class="button" id="sanhok2" type="button"onclick="myfun4(4,2)">SANHOK</button>
+		<button class="button" id="vikendi2" type="button" onclick="myfun4(5,2)">VIKENDI</button>
+	</section>
+	<section class="sec2" id=mapforsquad>
+		<button class="button" id="livik3" type="button" onclick="myfun5(1,3)">LIVIK</button>
+		<button class="button" id="erangle3" type="button" onclick="myfun5(2,3)">ERANGLE</button>
+		<button class="button" id="miramar3" type="button" onclick="myfun5(3,3)">MIRAMAR</button>
+		<button class="button" id="sanhok3" type="button"onclick="myfun5(4,3)">SANHOK</button>
+		<button class="button" id="vikendi3" type="button" onclick="myfun5(5,3)">VIKENDI</button>
+	</section>	
+	<section id="form">
+		<form id="form1" action="https://usebasin.com/f/bd61efee5baa" method="POST" autocomplete="off">
+			<br>
+			<label for="name">Name</label>
+			<br>
+			<input id="name" type="text" name="name" placeholder="Enter ID name" required>
+			<br>
+			<br>
+			<label for="id">ID Number</label>
+			<br>
+			<input type="text" id="id" name="id" placeholder="ID Number" required>
+			<br>
+			<br>
+			<label for="id">Phone number</label>
+			<br>
+			<input type="text" id="phonenumber" name="phonenumber" placeholder="Phone Number linked with bank" pattern="[0-9]{10}" required>
+			<br>
+			<br>
+			<label for="id">Email</label>
+			<br>
+			<input type="text" id="email" name="email" placeholder="Email address" required>
+			<br>
+			<br>
+			<button type="submit" id="submit">SUBMIT</button>
+		</form>
+	</section>
+	<section id="menubar">
+		<button id=instructionbutton onclick="openinstruction()">Instructions</button>
+		<button id=eventbutton onclick="openevent()">Events</button>
+		<button id="winnersanddonationsbutton" onclick="openwinnersanddonation()">Winners<br>and<br>Donations</button>
+	</section>
+	<section id="instruction">
+		<h4 align="center" style="font-size:20px; color: red">INSTRUCTIONS</h4>
+		<ul>
+			<li>
+				Select your options and maps and some will unlocked sooner.
+			</li>
+			<li>
+				Fill the form correctly. Wrong detials will make problems on tornament.
+			</li>
+			<li>
+				After submission, you have to pay the entry fee within 5 hours. the unpaid participates will be removed from the list.
+			</li>
+			<li>
+				Make sure that you are giving the right phone number, because the verfication of payments and give-back are made only by using your phone number.
+			</li>
+			<li>
+				Once we verified, we will send you a link to your given mail, and that will hold the room ID and password before the short interval from tornaments beginning.
+			</li>
+			<li>
+				Once the tornaments end we will give prizes and give-backs ASAP (as soon as possible).
+			</li>
+			<li>
+				The participates who joined after the tournament limit will have two choices play next time with that money or you can also get it back.
+			</li>
+			<li>
+				Cancelling your participation will be available only for a short period and cheaters and hackers won't get award or give-back, if once they caught.
+			</li>
+			<li>
+				We will anounce the previous game winners and also give you the count of give-back so that you can know everything.
+			</li>
+			<li>
+				Go for Help, if you have any doubt or some more information.
+			</li>
+		</ul>
+		<p align="center" style="font-size:10px">Need any help? or more informations? <a href="mailto:Bytvtornaments@gmail.com">Don't shy to ask</a></p>
+	</section>
+	<section id="event">
+		<section class="boxes" id="b1">
+			<p align="center">Coming soon</p>
+		</section>
+		<section class="boxes" id="b2">
+			<p align="center">Coming soon</p>
+		</section>
+		<section class="boxes" id="b3">
+			<p align="center">Coming soon</p>
+		</section>
+	</section>
+	<section id="winnersanddonations">
+		<section id="winners">
+			<p align="center" style="font-size: 22px">PREVIOUS MATCH WINNER</p>
+		</section>
+		<section id="donations">
+			<p align="center" style="font-size: 22px">DONATERS&#128525</p>
+			<ul>
+				<li>
+					You know&#128542, we can't able to maintain this tornament without your support&#129402.
+				</li>
+				<li>
+					Please donate what you can&#128591, your small help will us big support&#128170. Because we are in real struggle&#128549.
+				</li>
+				<li>
+					And your kindness will be shouted here&#128519.
+				</li>
+			</ul>
+			<button onclick="" id="donatenow"><b>Donate Now</b></button>
+		</section>
+	</section>
+	<script>
+		function myfun(x) {
+			if (x==1) {
+				document.getElementById('solo').style.color="black"
+			    document.getElementById('solo').style.backgroundColor="white"
+				document.getElementById('duo').style.color="white"
+				document.getElementById('duo').style.backgroundColor="black"
+				document.getElementById('squad').style.color="white"
+				document.getElementById('squad').style.backgroundColor="black"
+
+				document.getElementById('mapforsolo').style.display="initial"
+				document.getElementById('mapforduo').style.display="none"
+				document.getElementById('mapforsquad').style.display="none"
+			}
+			else if(x==2) {
+				document.getElementById('solo').style.color="white"
+			    document.getElementById('solo').style.backgroundColor="black"
+				//document.getElementById('duo').style.color="black"
+				//document.getElementById('duo').style.backgroundColor="white"
+				document.getElementById('squad').style.color="white"
+				document.getElementById('squad').style.backgroundColor="black"
+
+				alert("LOCKED FOR NOW, COMING SOON")
+				document.getElementById('mapforsolo').style.display="none"
+				//document.getElementById('mapforduo').style.display="initial"
+				document.getElementById('mapforsquad').style.display="none"
+			}
+			else if(x==3) {
+				document.getElementById('solo').style.color="white"
+			    document.getElementById('solo').style.backgroundColor="black"
+				document.getElementById('duo').style.color="white"
+				document.getElementById('duo').style.backgroundColor="black"
+				//document.getElementById('squad').style.color="black"
+				//document.getElementById('squad').style.backgroundColor="white"
+
+				alert("LOCKED FOR NOW, COMING SOON")
+				document.getElementById('mapforsolo').style.display="none"
+				document.getElementById('mapforduo').style.display="none"
+				//document.getElementById('mapforsquad').style.display="initial"
+			}
+
+		}
+		function myfun2(y,z) {
+			if(y==1){
+				//document.getElementById('livik').style.color='black'
+				//document.getElementById('livik').style.backgroundColor='white'
+				document.getElementById('erangle').style.color='white'
+				document.getElementById('erangle').style.backgroundColor='black'
+				document.getElementById('miramar').style.color='white'
+				document.getElementById('miramar').style.backgroundColor='black'
+				document.getElementById('sanhok').style.color='white'
+				document.getElementById('sanhok').style.backgroundColor='black'
+				document.getElementById('vikendi').style.color='white'
+				document.getElementById('vikendi').style.backgroundColor='black'
+
+				alert("LOCKED FOR NOW, COMING SOON")
+				document.getElementById('form').style.display="none"
+				//document.getElementById('form').style.display="initial"
+			}
+			else if(y==2){
+				document.getElementById('livik').style.color='white'
+				document.getElementById('livik').style.backgroundColor='black'
+				document.getElementById('erangle').style.color='black'
+				document.getElementById('erangle').style.backgroundColor='white'
+				document.getElementById('miramar').style.color='white'
+				document.getElementById('miramar').style.backgroundColor='black'
+				document.getElementById('sanhok').style.color='white'
+				document.getElementById('sanhok').style.backgroundColor='black'
+				document.getElementById('vikendi').style.color='white'
+				document.getElementById('vikendi').style.backgroundColor='black'
+
+				document.getElementById('form').style.display="none"
+				document.getElementById('form').style.display="initial"
+			}
+			else if(y==3){
+				document.getElementById('livik').style.color='white'
+				document.getElementById('livik').style.backgroundColor='black'
+				document.getElementById('erangle').style.color='white'
+				document.getElementById('erangle').style.backgroundColor='black'
+				//document.getElementById('miramar').style.color='black'
+				//document.getElementById('miramar').style.backgroundColor='white'
+				document.getElementById('sanhok').style.color='white'
+				document.getElementById('sanhok').style.backgroundColor='black'
+				document.getElementById('vikendi').style.color='white'
+				document.getElementById('vikendi').style.backgroundColor='black'
+
+				alert("LOCKED FOR NOW, COMING SOON")
+				document.getElementById('form').style.display="none"
+				//document.getElementById('form').style.display="initial"
+			}
+			else if(y==4){
+				document.getElementById('livik').style.color='white'
+				document.getElementById('livik').style.backgroundColor='black'
+				document.getElementById('erangle').style.color='white'
+				document.getElementById('erangle').style.backgroundColor='black'
+				document.getElementById('miramar').style.color='white'
+				document.getElementById('miramar').style.backgroundColor='black'
+				//document.getElementById('sanhok').style.color='black'
+				//document.getElementById('sanhok').style.backgroundColor='white'
+				document.getElementById('vikendi').style.color='white'
+				document.getElementById('vikendi').style.backgroundColor='black'
+
+				document.getElementById('form').style.display="none"
+				//document.getElementById('form').style.display="initial"
+			}
+			else if(y==5){
+				document.getElementById('livik').style.color='white'
+				document.getElementById('livik').style.backgroundColor='black'
+				document.getElementById('erangle').style.color='white'
+				document.getElementById('erangle').style.backgroundColor='black'
+				document.getElementById('miramar').style.color='white'
+				document.getElementById('miramar').style.backgroundColor='black'
+				document.getElementById('sanhok').style.color='white'
+				document.getElementById('sanhok').style.backgroundColor='black'
+				//document.getElementById('vikendi').style.color='black'
+				//document.getElementById('vikendi').style.backgroundColor='white'
+
+				document.getElementById('form').style.display="none"
+				//document.getElementById('form').style.display="initial"
+			}
+		}
+		function myfun4(y,z) {
+			if(y==1){
+				document.getElementById('livik2').style.color='black'
+				document.getElementById('livik2').style.backgroundColor='white'
+				document.getElementById('erangle2').style.color='white'
+				document.getElementById('erangle2').style.backgroundColor='black'
+				document.getElementById('miramar2').style.color='white'
+				document.getElementById('miramar2').style.backgroundColor='black'
+				document.getElementById('sanhok2').style.color='white'
+				document.getElementById('sanhok2').style.backgroundColor='black'
+				document.getElementById('vikendi2').style.color='white'
+				document.getElementById('vikendi2').style.backgroundColor='black'
+
+				document.getElementById('form').style.display="none"
+				//document.getElementById('form').style.display="initial"
+			}
+			else if(y==2){
+				document.getElementById('livik2').style.color='white'
+				document.getElementById('livik2').style.backgroundColor='black'
+				document.getElementById('erangle2').style.color='black'
+				document.getElementById('erangle2').style.backgroundColor='white'
+				document.getElementById('miramar2').style.color='white'
+				document.getElementById('miramar2').style.backgroundColor='black'
+				document.getElementById('sanhok2').style.color='white'
+				document.getElementById('sanhok2').style.backgroundColor='black'
+				document.getElementById('vikendi2').style.color='white'
+				document.getElementById('vikendi2').style.backgroundColor='black'
+
+				document.getElementById('form').style.display="none"
+				//document.getElementById('form').style.display="initial"
+			}
+			else if(y==3){
+				document.getElementById('livik2').style.color='white'
+				document.getElementById('livik2').style.backgroundColor='black'
+				document.getElementById('erangle2').style.color='white'
+				document.getElementById('erangle2').style.backgroundColor='black'
+				document.getElementById('miramar2').style.color='black'
+				document.getElementById('miramar2').style.backgroundColor='white'
+				document.getElementById('sanhok2').style.color='white'
+				document.getElementById('sanhok2').style.backgroundColor='black'
+				document.getElementById('vikendi2').style.color='white'
+				document.getElementById('vikendi2').style.backgroundColor='black'
+
+				document.getElementById('form').style.display="none"
+				document.getElementById('form').style.display="initial"
+			}
+			else if(y==4){
+				document.getElementById('livik2').style.color='white'
+				document.getElementById('livik2').style.backgroundColor='black'
+				document.getElementById('erangle2').style.color='white'
+				document.getElementById('erangle2').style.backgroundColor='black'
+				document.getElementById('miramar2').style.color='white'
+				document.getElementById('miramar2').style.backgroundColor='black'
+				document.getElementById('sanhok2').style.color='black'
+				document.getElementById('sanhok2').style.backgroundColor='white'
+				document.getElementById('vikendi2').style.color='white'
+				document.getElementById('vikendi2').style.backgroundColor='black'
+
+				document.getElementById('form').style.display="none"
+				document.getElementById('form').style.display="initial"
+			}
+			else if(y==5){
+				document.getElementById('livik2').style.color='white'
+				document.getElementById('livik2').style.backgroundColor='black'
+				document.getElementById('erangle2').style.color='white'
+				document.getElementById('erangle2').style.backgroundColor='black'
+				document.getElementById('miramar2').style.color='white'
+				document.getElementById('miramar2').style.backgroundColor='black'
+				document.getElementById('sanhok2').style.color='white'
+				document.getElementById('sanhok2').style.backgroundColor='black'
+				document.getElementById('vikendi2').style.color='black'
+				document.getElementById('vikendi2').style.backgroundColor='white'
+
+				document.getElementById('form').style.display="none"
+				document.getElementById('form').style.display="initial"
+			}
+		}
+		function myfun5(y,z) {
+			if(y==1){
+				document.getElementById('livik3').style.color='black'
+				document.getElementById('livik3').style.backgroundColor='white'
+				document.getElementById('erangle3').style.color='white'
+				document.getElementById('erangle3').style.backgroundColor='black'
+				document.getElementById('miramar3').style.color='white'
+				document.getElementById('miramar3').style.backgroundColor='black'
+				document.getElementById('sanhok3').style.color='white'
+				document.getElementById('sanhok3').style.backgroundColor='black'
+				document.getElementById('vikendi3').style.color='white'
+				document.getElementById('vikendi3').style.backgroundColor='black'
+
+				document.getElementById('form').style.display="none"
+				document.getElementById('form').style.display="initial"
+			}
+			else if(y==2){
+				document.getElementById('livik3').style.color='white'
+				document.getElementById('livik3').style.backgroundColor='black'
+				document.getElementById('erangle3').style.color='black'
+				document.getElementById('erangle3').style.backgroundColor='white'
+				document.getElementById('miramar3').style.color='white'
+				document.getElementById('miramar3').style.backgroundColor='black'
+				document.getElementById('sanhok3').style.color='white'
+				document.getElementById('sanhok3').style.backgroundColor='black'
+				document.getElementById('vikendi3').style.color='white'
+				document.getElementById('vikendi3').style.backgroundColor='black'
+
+				document.getElementById('form').style.display="none"
+				document.getElementById('form').style.display="initial"
+			}
+			else if(y==3){
+				document.getElementById('livik3').style.color='white'
+				document.getElementById('livik3').style.backgroundColor='black'
+				document.getElementById('erangle3').style.color='white'
+				document.getElementById('erangle3').style.backgroundColor='black'
+				document.getElementById('miramar3').style.color='black'
+				document.getElementById('miramar3').style.backgroundColor='white'
+				document.getElementById('sanhok3').style.color='white'
+				document.getElementById('sanhok3').style.backgroundColor='black'
+				document.getElementById('vikendi3').style.color='white'
+				document.getElementById('vikendi3').style.backgroundColor='black'
+
+				document.getElementById('form').style.display="none"
+				document.getElementById('form').style.display="initial"
+			}
+			else if(y==4){
+				document.getElementById('livik3').style.color='white'
+				document.getElementById('livik3').style.backgroundColor='black'
+				document.getElementById('erangle3').style.color='white'
+				document.getElementById('erangle3').style.backgroundColor='black'
+				document.getElementById('miramar3').style.color='white'
+				document.getElementById('miramar3').style.backgroundColor='black'
+				document.getElementById('sanhok3').style.color='black'
+				document.getElementById('sanhok3').style.backgroundColor='white'
+				document.getElementById('vikendi3').style.color='white'
+				document.getElementById('vikendi3').style.backgroundColor='black'
+
+				document.getElementById('form').style.display="none"
+				document.getElementById('form').style.display="initial"
+			}
+			else if(y==5){
+				document.getElementById('livik3').style.color='white'
+				document.getElementById('livik3').style.backgroundColor='black'
+				document.getElementById('erangle3').style.color='white'
+				document.getElementById('erangle3').style.backgroundColor='black'
+				document.getElementById('miramar3').style.color='white'
+				document.getElementById('miramar3').style.backgroundColor='black'
+				document.getElementById('sanhok3').style.color='white'
+				document.getElementById('sanhok3').style.backgroundColor='black'
+				document.getElementById('vikendi3').style.color='black'
+				document.getElementById('vikendi3').style.backgroundColor='white'
+
+				document.getElementById('form').style.display="none"
+				document.getElementById('form').style.display="initial"
+			}
+		}
+		function openinstruction() {
+			document.getElementById('instruction').style.display="initial"
+			document.getElementById('event').style.display="none"
+			document.getElementById('winnersanddonations').style.display="none"
+			document.getElementById('instructionbutton').style.color="black"
+			document.getElementById('instructionbutton').style.backgroundColor="white"
+			document.getElementById('eventbutton').style.color="white"
+			document.getElementById('eventbutton').style.backgroundColor="black"
+			document.getElementById('winnersanddonationsbutton').style.color="white"
+			document.getElementById('winnersanddonationsbutton').style.backgroundColor="black"
+
+		}
+		function openevent() {
+			document.getElementById('event').style.display="initial"
+			document.getElementById('instruction').style.display="none"
+			document.getElementById('winnersanddonations').style.display="none"
+			document.getElementById('instructionbutton').style.color="white"
+			document.getElementById('instructionbutton').style.backgroundColor="black"
+			document.getElementById('eventbutton').style.color="black"
+			document.getElementById('eventbutton').style.backgroundColor="white"
+			document.getElementById('winnersanddonationsbutton').style.color="white"
+			document.getElementById('winnersanddonationsbutton').style.backgroundColor="black"
+
+		}
+		function openwinnersanddonation() {
+			document.getElementById('event').style.display="none"
+			document.getElementById('instruction').style.display="none"
+			document.getElementById('winnersanddonations').style.display="initial"
+			document.getElementById('instructionbutton').style.color="white"
+			document.getElementById('instructionbutton').style.backgroundColor="black"
+			document.getElementById('eventbutton').style.color="white"
+			document.getElementById('eventbutton').style.backgroundColor="black"
+			document.getElementById('winnersanddonationsbutton').style.color="black"
+			document.getElementById('winnersanddonationsbutton').style.backgroundColor="white"
+
+		}
+	</script>
+</body>
+</html>

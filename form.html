@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>form</title>
+	<style type="text/css">
+		*{
+			font-family: arial black;
+		}
+	</style>
+
+	<script 
+  src="https://code.jquery.com/jquery-3.4.1.js"
+  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+  crossorigin="anonymous"></script>
+	<script>
+		function SubForm(){
+    	$.ajax({
+        	url:'https://api.apispreadsheets.com/data/1681/',
+        	type:'post',
+        	data:$("#myForm").serializeArray(),
+        	success: function(){
+          	alert("Form Data Submitted :)")
+        	},
+        	error: function(){
+          	alert("There was an error :(")
+        	}
+    		});
+		}
+	</script>
+
+</head>
+<body>
+<form id="myForm">
+  
+  <div>
+    <label>Field 1</label>
+    <input type="text" name="form_field_1" placeholder="Field 1"/>
+  </div>
+
+  <div>
+    <label>Field 2</label>
+    <input type="text" name="form_field_2" placeholder="Field 2"/>
+  </div>
+  
+  <div>
+    <label>Field 3</label>
+    <input type="text" name="form_field_3" placeholder="Field 3"/>
+  </div>
+  
+  <div>
+    <label>Field 4</label>
+    <input type="text" name="form_field_4" placeholder="Field 4"/>
+  </div>
+
+  <div>
+    <button type="submit"id="submit-form" onclick="SubForm()">Submit</button>
+  </div>
+
+</form>
+</body>
+</html>
